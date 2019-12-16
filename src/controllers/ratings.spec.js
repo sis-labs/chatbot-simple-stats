@@ -1,9 +1,9 @@
 const sinon = require('sinon');
 
-const { homeHandler } = require('./home');
+const { ratingsCreateHandler } = require('./ratings');
 
-describe('home', () => {
-  it('should handle home correctly', async () => {
+describe('ratings', () => {
+  it('should create rating correctly', async () => {
     // GIVEN
     const request = {
       log: {
@@ -15,7 +15,7 @@ describe('home', () => {
     };
 
     // WHEN
-    const controller = homeHandler();
+    const controller = ratingsCreateHandler();
     await controller(request, reply);
 
     // THEN

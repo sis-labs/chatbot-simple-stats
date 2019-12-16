@@ -5,8 +5,7 @@ const  { setupLogging } = require('./logging');
 const { setupRoutes, routes } = require('./routes');
 const { setupServer, startThunk } = require('./server');
 
-let config = require('../config');
-config = {...process.env, ...config};
+let config = process.env;
 const loggingConfig = setupLogging(config);
 const server = setupServer({setupRoutes, Fastify, routes, ...config, loggingConfig});
 

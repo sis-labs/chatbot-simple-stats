@@ -1,10 +1,10 @@
 module.exports = {
-    homeHandler
+    ratingsCreateHandler
   }
   
-  function homeHandler() {
+  function ratingsCreateHandler() {
     return async (request, reply) => {
       request.log.debug('handling a request on greetings controller');
-      return reply.send({message: 'this is a test', code: 1});
+      return reply.send({message: 'Create a rating', code: 1});
     };
   }

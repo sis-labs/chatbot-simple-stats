@@ -4,7 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js",
+    "start:dev": "nodemon src/index.js",
+    "test": "node_modules/.bin/mocha 'src/**/*.spec.js'",
+    "test:it": "node_modules/.bin/mocha --exit 'test/**/*.it.test.js'"
+  },
+  "engines": {
+    "node": "12.x"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +25,7 @@
     "chai": "^4.2.0",
     "mocha": "^6.2.2",
     "nock": "^11.7.0",
+    "nodemon": "^2.0.2",
     "sinon": "^7.5.0",
     "supertest": "^4.0.2"
   }
