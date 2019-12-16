@@ -1,0 +1,25 @@
+{
+  "name": "chatbot-simple-stats",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@elastic/elasticsearch": "^7.5.0",
+    "dotenv": "^8.2.0",
+    "fastify": "^2.11.0",
+    "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "nock": "^11.7.0",
+    "sinon": "^7.5.0",
+    "supertest": "^4.0.2"
+  }
+}
