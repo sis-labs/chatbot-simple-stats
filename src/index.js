@@ -11,7 +11,13 @@ let config = process.env;
 
 const loggingConfig = setupLogging(config);
 
-const esClient = new Client({ node: config['SEARCHBOX_URL'] })
+const esClient = new Client({ node: {
+  url: new URL(config['ELASTIC_URL']),
+  auth: {
+    username: config['ELASTIC_USERNAME'],
+    password: config['ELASTIC_PASSWORD'],
+  },
+} })
 
 const server = setupServer({setupRoutes, Fastify, routes, ...config, loggingConfig, dependencies: {config, esClient}});
 const close = startThunk({server, ...config})();

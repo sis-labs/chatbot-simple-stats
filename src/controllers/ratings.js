@@ -11,7 +11,7 @@ function ratingsCreateHandler({ config, esClient }) {
     console.log(JSON.stringify(rating));
     await esClient.index({
       id,
-      index: config['RATINGS_INDEX_NAME'],
+      index: config['INDEX_NAME'],
       type: 'ratings',
       body: rating
     });
