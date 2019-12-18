@@ -5,6 +5,12 @@ const { ratingsCreateHandler } = require('./ratings');
 describe('ratings', () => {
   it('should create rating correctly', async () => {
     // GIVEN
+    const config = {
+      INDEX_NAME: 'test'
+    };
+    const esClient = {
+      index: async () => (true)
+    }
     const request = {
       log: {
         debug: sinon.spy(),
@@ -15,7 +21,7 @@ describe('ratings', () => {
     };
 
     // WHEN
-    const controller = ratingsCreateHandler();
+    const controller = ratingsCreateHandler({config, esClient});
     await controller(request, reply);
 
     // THEN
