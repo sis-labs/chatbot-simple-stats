@@ -19,8 +19,8 @@ const moment = require('moment-timezone');
 //...
 const {SERVER_TIMEZONE} = process.env;
 //...
-function getDate() {
-  return moment().tz(SERVER_TIMEZONE).format();
+function getDate(config) {
+  return moment().tz(config['SERVER_TIMEZONE']).format();
 }
 //...
 ```

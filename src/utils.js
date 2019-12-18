@@ -1,5 +1,8 @@
+const moment = require('moment-timezone');
+
 module.exports = {
-  getEsConfig
+  getEsConfig,
+  getDate,
 };
 
 function getEsConfig(config) {
@@ -13,4 +16,8 @@ function getEsConfig(config) {
     }
   }
   return esConfig;
+}
+
+function getDate(config) {
+  return moment().tz(config['SERVER_TIMEZONE']);
 }

@@ -12,7 +12,7 @@ function ratingsCreateHandler({ config, esClient }) {
     await esClient.index({
       id,
       index: config['INDEX_NAME'],
-      type: 'ratings',
+      type: 'rating',
       body: rating
     });
     request.log.debug('handling a request on greetings controller');

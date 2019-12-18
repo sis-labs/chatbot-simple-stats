@@ -6,13 +6,13 @@ const { Client } = require('@elastic/elasticsearch');
 const { setupLogging } = require('./logging');
 const { setupRoutes, routes } = require('./routes');
 const { setupServer, startThunk } = require('./server');
-const { esConfig } = require('./utils');
+const { getEsConfig } = require('./utils');
 
 let config = process.env;
 
 const loggingConfig = setupLogging(config);
 
-const esConfig = getEsConfig();
+const esConfig = getEsConfig(config);
 
 const esClient = new Client({ node: esConfig })
 
